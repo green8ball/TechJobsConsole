@@ -147,15 +147,21 @@ namespace TechJobsConsole
 
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
-            foreach (Dictionary<string, string> row in AllJobs)
+            foreach (Dictionary<string, string> job in AllJobs)
             {
-                string aValue = row[column];
-
-                if (aValue.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0)
+                foreach (KeyValuePair<string, string> jobField in job)
                 {
-                    jobs.Add(row);
-                    break;
+                    if (jobField.Value.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        jobs.Add(job);
+                        break;
+                    }
                 }
+                //if (aValue.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0)
+                //{
+                //    jobs.Add(row);
+                //    break;
+                //}
             }
 
             return jobs;
