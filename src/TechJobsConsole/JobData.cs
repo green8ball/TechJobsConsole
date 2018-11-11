@@ -157,11 +157,7 @@ namespace TechJobsConsole
                         break;
                     }
                 }
-                //if (aValue.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0)
-                //{
-                //    jobs.Add(row);
-                //    break;
-                //}
+
             }
 
             return jobs;
